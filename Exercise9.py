@@ -3,12 +3,12 @@ Created on Fri Nov  2 10:37:18 2018
 
 @author: marissaandersen
 """
+import pandas as pd
+data=pd.read_csv("GPA.txt", header=0, sep=",")
 
-
-
-
-
-
+from plotnine import *
+a=ggplot(data,aes(x="GPA", y="Attendence"))+geom_point()+theme_classic()
+a+xlab("Grade Point Average (GPA)")+ylab("Attendence (days)")+stat_smooth(method="lm")
 
 
 
